@@ -17,7 +17,7 @@ class LinkedList{
     isEmpty(){
         return this.size===0;
     }
-    preppend(){
+    preppend(value){
         const node = new Node(value);
         if(this.isEmpty()){
             this.head=node;
@@ -26,11 +26,11 @@ class LinkedList{
             node.next=this.head;
             this.head=node;
         }
-        size++;
+        this.size++;
     }
-    append(){
+    append(value){
         const node = new Node(value);
-        if(this.isEmpty){
+        if(this.isEmpty()){
             this.head=node;
         }else{
             let prev=this.head;
@@ -50,7 +50,7 @@ print(){
         let curr= this.head;
         let listValues=''
         while(curr){
-            listValues=`${curr.value} `;
+            listValues+=`${curr.value} `;
             curr=curr.next;
         }
         console.log(listValues);
@@ -77,5 +77,3 @@ list.preppend(40);
 list.preppend(50);
 list.preppend(60);
 list.print()
-
-
