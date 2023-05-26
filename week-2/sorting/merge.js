@@ -1,5 +1,5 @@
 function mergeSort(arr){
-    if(arr.length>2){
+    if(arr.length<2){
         return arr
     }
     let mid=Math.floor(arr.length/2)
@@ -20,3 +20,6 @@ function merge(left,right){
     }
     return [...sortedArray, ...left, ...right]
 }
+const array=[-2,-40,4,2,21,8]
+
+console.log(mergeSort(array));
