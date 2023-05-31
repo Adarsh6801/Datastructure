@@ -5,15 +5,12 @@ function quickSort(arr){
     let pivot=arr[arr.length-1]
     let left=[]
     let right=[]
-    for(let i=0; i<arr.length-1;i++){
-        if(arr[i]>pivot){
+    for(let i=0;i<arr.lenth-1;i++){
+        if(arr[i]<pivot){
             left.push(arr[i])
         }else{
             right.push(arr[i])
-        }
     }
-    return [...quickSort(left), pivot, ...quickSort(right)]
 }
-
-const array=[-10,9,23,-21,3,676]
-console.log(quickSort(array));
+return [...quickSort(left),quickSort(right)]
+}
