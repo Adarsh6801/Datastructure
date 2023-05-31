@@ -52,9 +52,8 @@ class BinarySearchTree{
     preorder(root){
         if(root){
             console.log(root.value);
-            this.preorder(root.left)
+            this.preorder(root.left);
             this.preorder(root.right)
-
         }
     }
 
