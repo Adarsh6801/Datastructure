@@ -9,7 +9,7 @@ class Graph{
         }
     }
 
-    addEdge(vertex1, vertex2){
+    addEdge(vertex1, vertex2, bidirectional){
         if(!this.adjecencyList[vertex1]){
             this.addVertex(vertex1)
         }
@@ -17,8 +17,9 @@ class Graph{
             this.addVertex(vertex2)
         }
         this.adjecencyList[vertex1].add(vertex2)
-        this.adjecencyList[vertex2].add(vertex1)
-
+        if(bidirectional){
+            this.adjecencyList[vertex2].add(vertex1)
+        }
     }
 
     display(){
@@ -42,8 +43,18 @@ class Graph{
             return false
         }
         for(let adjacencyVertex of this.adjecencyList[vertex]){
+            console.log(adjacencyVertex);
             this.removeEdge(vertex,adjacencyVertex)
         }
         delete this.adjecencyList[vertex]
     }
 }
+
+const graph = new Graph()
+graph.addEdge(4,5,true)
+graph.addEdge(3,5,false)
+graph.addEdge(5,6,false)
+
+graph.display()
+graph.removeVertex(4)
+graph.display()
